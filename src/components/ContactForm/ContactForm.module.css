@@ -1,0 +1,41 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 1em;
+    margin-bottom: .5em;
+    gap: 1em;
+
+}
+
+.formItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.inputLabel {
+    align-self: flex-start;
+    padding-left: .5em;
+    margin-bottom: .3em;
+    font-weight: 600;
+}
+
+.inputItem {
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.errorMessage {
+    color: red;
+}
+
+.btn {
+    width: max-content;
+    font-weight: 400;
+}

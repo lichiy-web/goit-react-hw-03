@@ -3,7 +3,7 @@ import css from './Contact.module.css';
 import { FaPhone } from 'react-icons/fa6';
 import { RiUser3Fill } from 'react-icons/ri';
 
-const Contact = ({ name, number }) => {
+const Contact = ({ name, number, id, onDeleteContact }) => {
   return (
     <div className={css.contactItem}>
       <div className={css.contactInfo}>
@@ -17,7 +17,9 @@ const Contact = ({ name, number }) => {
         </div>
       </div>
       <div className={css.contactBtnItem}>
-        <button className={css.btn}>Delete</button>
+        <button className={css.btn} onClick={() => onDeleteContact(id)}>
+          Delete
+        </button>
       </div>
     </div>
   );

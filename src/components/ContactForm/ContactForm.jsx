@@ -2,6 +2,7 @@ import css from './ContactForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
+import clsx from 'clsx';
 
 const initialValues = {
   name: '',
@@ -15,7 +16,7 @@ const ContactFormSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   number: Yup.string()
-    .matches(/\d{3}-?\d{2}-?\d{2}/i, 'Must be a valid phone number!')
+    .matches(/^\d{3}-?\d{2}-?\d{2}$/i, 'Must be a valid phone number!')
     .required('Required'),
 });
 
@@ -33,17 +34,25 @@ const ContactForm = ({ onAddContact }) => {
       validationSchema={ContactFormSchema}
     >
       <Form className={css.contactForm}>
-        <label className="nameLabel">
-          <span>Name</span>
-          <Field className={css.nameInput} type="text" name="name" />
-          <ErrorMessage name="name" component="span" />
+        <label className={clsx(css.formItem, css.nameLabel)}>
+          <span className={css.inputLabel}>Name</span>
+          <Field className={css.inputItem} type="text" name="name" />
+          <ErrorMessage
+            className={css.errorMessage}
+            name="name"
+            component="span"
+          />
         </label>
-        <label className="numberLabel">
-          <span>Number</span>
-          <Field className={css.numberInput} type="text" name="number" />
-          <ErrorMessage name="number" component="span" />
+        <label className={clsx(css.formItem, css.numberLabel)}>
+          <span className={css.inputLabel}>Number</span>
+          <Field className={css.inputItem} type="text" name="number" />
+          <ErrorMessage
+            className={css.errorMessage}
+            name="number"
+            component="span"
+          />
         </label>
-        <button className={css.btn} type="submit">
+        <button className={clsx(css.formItem, css.btn)} type="submit">
           Add contact
         </button>
       </Form>

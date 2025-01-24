@@ -22,9 +22,17 @@
     gap: .5em;
 }
 
+.contactNameIcon {
+    color:blue;
+}
+
 .contactName {
     /* line-height: 1.2; */
     font-family: 'Arial';
+}
+
+.contactPhoneIcon {
+    color: green;
 }
 
 .contactBtnItem {
