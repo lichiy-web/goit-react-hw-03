@@ -1,0 +1,13 @@
+.SearchBox {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.searchLabelWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5em;
+}
+

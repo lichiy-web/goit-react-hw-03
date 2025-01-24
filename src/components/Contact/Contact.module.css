@@ -1,0 +1,40 @@
+.contactItem {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    display:flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    box-sizing: border-box;
+
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoItem {
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.contactName {
+    /* line-height: 1.2; */
+    font-family: 'Arial';
+}
+
+.contactBtnItem {
+    display: flex;
+    place-items: center;
+}
+
+.btn {
+    padding: .3em 1em;
+    font-weight: 400;
+}
+
+

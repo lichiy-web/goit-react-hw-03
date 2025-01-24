@@ -1,16 +1,23 @@
 #root {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   display: flex;
   justify-content: center;
   /* text-align: center; */
   /* border: 1px dotted red; */
+  overflow: scroll;
 }
 
 .main-container {
+  padding: 2em 2em 0 2em;
   max-width: 1280px;
+  min-width: 30em;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.phoneBookTitle {
+  margin-bottom: .5em;
 }
