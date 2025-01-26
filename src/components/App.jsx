@@ -20,6 +20,7 @@ function App() {
   };
 
   const handleAddContact = newContact => {
+    newContact.number = newContact.number.match(/\d/gi).join('');
     setContacts(prev => [...prev, newContact]);
   };
 

@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import css from './Contact.module.css';
 import { FaPhone } from 'react-icons/fa6';
 import { RiUser3Fill } from 'react-icons/ri';
+import { normalizePhoneNumber } from './Contact.js';
 
 const Contact = ({ name, number, id, onDeleteContact }) => {
   return (
@@ -13,7 +14,9 @@ const Contact = ({ name, number, id, onDeleteContact }) => {
         </div>
         <div className={clsx(css.infoItem, css.contactNumberItem)}>
           <FaPhone className={css.contactPhoneIcon} />
-          <span className={css.contactNumber}>{number}</span>
+          <span className={css.contactNumber}>
+            {normalizePhoneNumber(number)}
+          </span>
         </div>
       </div>
       <div className={css.contactBtnItem}>
