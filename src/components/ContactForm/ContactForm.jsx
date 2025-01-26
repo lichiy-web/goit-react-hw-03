@@ -10,20 +10,22 @@ const initialValues = {
   id: '',
 };
 
+const phoneNumberMask =
+  /^(\d(?=-?\(?\d{3}\)?(-?\d){7}))?((?<=^\d)-)?((\((?=\d{3}\)))?\d{3}((?<=\(\d{3})\))?)?((?<=[\d|)])-)?(\d-?){7}$/i;
+
 const ContactFormSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
   number: Yup.string()
-    .matches(/^\d{3}-?\d{2}-?\d{2}$/i, 'Must be a valid phone number!')
+    .matches(phoneNumberMask, 'Must be a valid phone number!')
     .required('Required'),
 });
 
 const ContactForm = ({ onAddContact }) => {
   const handleSubmit = (newContact, actions) => {
     newContact.id = nanoid();
-    // console.log('handleSubmit newContact:', newContact);
     onAddContact(newContact);
     actions.resetForm();
   };
