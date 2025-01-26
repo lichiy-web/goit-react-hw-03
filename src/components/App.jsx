@@ -20,8 +20,6 @@ function App() {
   };
 
   const handleAddContact = newContact => {
-    // console.log('handleAddContact=> newContact: ', newContact);
-    // console.log('handleAddContact=> contacts: ', contacts);
     setContacts(prev => [...prev, newContact]);
   };
 
@@ -37,7 +35,9 @@ function App() {
     <div className="main-container">
       <h1 className="phonebookTitle">Phonebook</h1>
       <ContactForm onAddContact={handleAddContact} />
-      <SearchBox searchQuery={searchQuery} onSearch={handleSearchQuery} />
+      {contacts.length > 0 && (
+        <SearchBox searchQuery={searchQuery} onSearch={handleSearchQuery} />
+      )}
       {contacts.length ? (
         <ContactList
           contacts={matchedContacs}

@@ -3,11 +3,14 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    border: 1px solid #000000;
+    /* border: 1px solid #000000; */
     border-radius: 5px;
     padding: 1em;
     margin-bottom: .5em;
     gap: 1em;
+
+    box-shadow: 0.1em 0 1em #d0d0d0;
+    color: #9E9E9E;
 
 }
 
@@ -27,7 +30,8 @@
 
 .inputItem {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: .2em;
 }
 
 
@@ -36,6 +40,14 @@
 }
 
 .btn {
+    border: 0;
     width: max-content;
     font-weight: 400;
+    color: #D6FFDD;
+    background: linear-gradient(90deg, #006E10, #01AF19);
+}
+
+.btn:hover {
+    background: linear-gradient(270deg, #006E10, #01AF19);
+    filter: brightness(120%);
 }

@@ -4,6 +4,12 @@
     margin-bottom: 2em;
 }
 
+.searchInput {
+    border-radius: 8px;
+    padding: .2em;
+}
+
+
 .searchLabelWrapper {
     display: flex;
     flex-direction: column;

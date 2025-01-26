@@ -1,14 +1,17 @@
 .contactItem {
-    border: 1px solid #000000;
+    /* border: 1px solid #000000; */
     border-radius: 5px;
     margin-bottom: 1em;
     display:flex;
     justify-content: space-between;
     padding: 0.5em;
     box-sizing: border-box;
-
-    font-size: 1.2em;
+    
+    /* font-size: 1.2em; */
     font-weight: 400;
+    
+    box-shadow: 0.1em 0 1em #d0d0d0 ;
+    color: #9E9E9E;
 }
 
 .contactInfo {
@@ -43,6 +46,17 @@
 .btn {
     padding: .3em 1em;
     font-weight: 400;
+    border: 0;
+    border-radius: 5px;
+    width: max-content;
+    font-weight: 400;
+    color: #D6FFDD;
+    /* background: linear-gradient(90deg, #006E10, #01AF19); */
+    background-color: #01AF19;
 }
 
+.btn:hover {
+    /* background: linear-gradient(270deg, #006E10, #01AF19); */
+    filter: brightness(120%);
+}
 
