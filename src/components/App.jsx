@@ -5,6 +5,7 @@ import contactData from '../db/contactListData.json';
 import SearchBox from './SearchBox/SearchBox';
 import ContactForm from './ContactForm/ContactForm';
 import Notification from './Notification/Notification';
+import toast from 'react-hot-toast';
 
 function App() {
   // localStorage.removeItem('contactList');
@@ -21,11 +22,28 @@ function App() {
 
   const handleAddContact = newContact => {
     newContact.number = newContact.number.match(/\d/gi).join('');
+
+    const isExisted = contacts.some(
+      ({ number }) => number.match(/\d/gi).join('') === newContact.number
+    );
+    console.log('isExisted = ' + isExisted);
+    if (isExisted) {
+      toast.error('The contact containing this number already exists!', {
+        duration: 4000,
+      });
+      return;
+    }
     setContacts(prev => [...prev, newContact]);
+    toast.success('The new contact has successfully added!', {
+      duration: 4000,
+    });
   };
 
   const handleDeleteContact = id => {
     setContacts(prev => prev.filter(item => item.id !== id));
+    toast.success('The contact has successfully deleted!', {
+      duration: 4000,
+    });
   };
 
   useEffect(() => {

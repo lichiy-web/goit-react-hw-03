@@ -6,10 +6,13 @@ import { normalizePhoneNumber } from './Contact.js';
 
 const Contact = ({ name, number, id, onDeleteContact }) => {
   return (
-    <div className={css.contactItem}>
+    <div className={css.contactItem} tabIndex="1">
       <div className={css.contactInfo}>
         <div className={clsx(css.infoItem, css.contactNameItem)}>
-          <RiUser3Fill className={css.contactNameIcon} />
+          <div className={css.contactNameIcon}>
+            <RiUser3Fill />
+          </div>
+
           <span className={css.contactName}>{name}</span>
         </div>
         <div className={clsx(css.infoItem, css.contactNumberItem)}>

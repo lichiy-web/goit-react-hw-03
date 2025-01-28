@@ -9,6 +9,8 @@
   --btn-color: #D6FFDD;
   --btn-background-dark-color: #006E10;
   --btn-background-light-color: #01AF19;
+  --btn-scroll-dark: #e59700;
+  --btn-scroll-light: #e2bd00;
 }
 
 :root {
